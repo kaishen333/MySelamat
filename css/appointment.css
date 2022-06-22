@@ -1,0 +1,31 @@
+.statement{
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.word1{
+    font-size: 1.4rem;
+    font-weight: 650;
+    margin-bottom: 20px;
+}
+
+.word2{
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.data{
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.navbar{
+    margin-bottom: 3rem;
+}
+
+.footer{
+    margin-top: 3rem;
+}

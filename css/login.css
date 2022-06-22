@@ -1,0 +1,27 @@
+
+.login {
+  min-height: 100vh;
+}
+
+.bg-image {
+  background-image: url('https://scontent.fpen1-1.fna.fbcdn.net/v/t1.6435-9/105455648_2751841115141310_3264765535267148270_n.jpg?_nc_cat=102&ccb=1-4&_nc_sid=730e14&_nc_ohc=Gq5LHEQx4CwAX8B5EV2&_nc_ht=scontent.fpen1-1.fna&oh=24245559dd156ce049752f9cdc457460&oe=613A0FF3');
+  background-size: cover;
+  background-position: center;
+}
+
+.login-heading {
+  font-weight: 300;
+}
+
+.btn-login {
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  padding: 0.75rem 1rem;
+}
+
+
+.brand{
+  text-decoration: none;
+  font-size: 2.6rem;
+  font-weight: 500;
+}

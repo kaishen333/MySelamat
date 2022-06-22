@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- site metas -->
+    <title>MySelamat</title>
+    <meta name="keywords" content="selamat">
+    <meta name="description" content="The official covid-19 app for Wakanda">
+    <meta name="author" content="UCCC2513">
+    <!-- icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/landing.css" rel="stylesheet" />
+    <link href="css/appointment.css" rel="stylesheet" />
+    <!-- jQuery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- Bootstrap core css-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <!-- Core theme JS-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="./js/map.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/cases.js"></script>
+    <script src="./js/locatehf.js"></script>
+    <script src="./js/renderdetail.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+
+
+<body onload="checLogin()">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a href="index.html" class="brand">MySelamat</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="register.html" id="reglink">Vaccine Registration</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="appointment.html" id="applink">Check Appointemnt
+                            Status</a></li>
+                    <span>|</span>
+                    <li class="nav-item"><a class="nav-link" href="login.html" id="loginlink">Login</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container" id="app">
+        <div class="site-registration-form__block name bg-light p-4 textblue">
+            <div class="statement">
+                Your vaccination status
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-3 ">
+                    <div class="word1">Name</div>
+                    <div class="word2">Abu Bakar Ali Bin Razak</div>
+                </div>
+                <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-3">
+                    <div class="word1">Identity Card</div>
+                    <div class="word2" id="ic"></div>
+                </div>
+                <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-4">
+                    <div class="word1">Phone Number</div>
+                    <div class="word2" id="ph"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="mb-4">
+                        <div style="background-color:#29255F; height:1px; width:100%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-3">
+                    <div class="word1">Appointment</div>
+                    <div class="word2" id="jdos1">DOSE 1</div>
+                </div>
+                <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-3">
+                    <div class="word1">Health Facility</div>
+                    <div class="word2" id="l1"></div>
+                </div>
+                <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-4">
+                    <div class="word1">Location of Vaccination Center</div>
+                    <div class="word2" id="l1"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-3">
+                    <div class="word1">Appointment Status</div>
+                    <div class="word2" id="jstatus1">
+                        <div class="d-none"
+                            style="padding:7px; color:#fff; background-color:#29255F; text-align:center; display:inline-block"
+                            id="jstatus1_confirm">CONFIRMED</div>
+                        <div class="d-none"
+                            style="padding:7px; color:#29255F; border:1px #29255F solid ; text-align:center; display:inline-block"
+                            id="jstatus1_process">PROCESSING</div>
+                        <div class="d-none"
+                            style="padding:7px; color:#fff; background-color:#3DB44A; text-align:center; display:inline-block"
+                            id="jstatus1_done">DONE</div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-3">
+                    <div class="word1">Appointemnt Date</div>
+                    <div class="word2" id="d1"></div>
+                </div>
+                <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-4">
+                    <div class="word1">Appointment Time</div>
+                    <div class="word2" id="t1"></div>
+                </div>
+            </div>
+            <hr> <br>
+            <div class="row">
+                <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-3">
+                    <div class="word1">Appointment</div>
+                    <div class="word2" id="jdos1">DOSE 2</div>
+                </div>
+                <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-3">
+                    <div class="word1">Health Facility</div>
+                    <div class="word2" id="l2"></div>
+                </div>
+                <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-4">
+                    <div class="word1">Location of Vaccination Center</div>
+                    <div class="word2" id="l2"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-3">
+                    <div class="word1">Appointment Status</div>
+                    <div class="word2" id="jstatus1">
+                        <div class="d-none"
+                            style="padding:7px; color:#fff; background-color:#29255F; text-align:center; display:inline-block"
+                            id="jstatus2_confirm">CONFIRMED</div>
+                        <div class="d-none"
+                            style="padding:7px; color:#29255F; border:1px #29255F solid ; text-align:center; display:inline-block"
+                            id="jstatus2_process">PROCESSING</div>
+                        <div class="d-none"
+                            style="padding:7px; color:#fff; background-color:#3DB44A; text-align:center; display:inline-block"
+                            id="jstatus2_done">DONE</div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-3">
+                    <div class="word1">Appointemnt Date</div>
+                    <div class="word2" id="d2"></div>
+                </div>
+                <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-4">
+                    <div class="word1">Appointment Time</div>
+                    <div class="word2" id="t2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer content-->
+    <div class="footer-container">
+        <section class="container parent-footer">
+            <div class="container footer">
+                <div class="col">
+                    <h1 class="text-uppercase align-content-center">Socials</h1>
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener"><i
+                            class="fa fa-facebook-f"></i></a>
+                    <a href="https://www.twitter.com" target="_blank" rel="noopener"><i class="fa fa-twitter"></i></a>
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener"><i
+                            class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        $("#jstatus1_confirm").removeClass("d-none");
+        $("#jstatus2_process").removeClass("d-none");
+    </script>
+    <script src="./js/details.js"></script>
+</body>
+
+</html>
